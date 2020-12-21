@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>jQuery UI Accordion - Collapse content</title>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  
+ 
+
+<style>
+
+.accordion {
+	margin: auto;
+	width: 400px;
+}
+.accordion input {
+	display: none;
+}
+.box {
+	position: relative;
+	background: white;
+    height: 64px;
+    transition: all .15s ease-in-out;
+}
+.box::before {
+    content: '';
+    position: absolute;
+    display: block;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    pointer-events: none;
+    box-shadow: 0 -1px 0 #e5e5e5,0 0 2px rgba(0,0,0,.12),0 2px 4px rgba(0,0,0,.24);
+}
+header.box {
+	background: #00BCD4;
+	z-index: 100;
+	cursor: initial;
+	box-shadow: 0 -1px 0 #e5e5e5,0 0 2px -2px rgba(0,0,0,.12),0 2px 4px -4px rgba(0,0,0,.24);
+}
+header .box-title {
+	margin: 0;
+	font-weight: normal;
+	font-size: 16pt;
+	color: white;
+	cursor: initial;
+}
+.box-title {
+	width: calc(100% - 40px);
+	height: 64px;
+	line-height: 64px;
+	padding: 0 20px;
+	display: inline-block;
+	cursor: pointer;
+	-webkit-touch-callout: none;-webkit-user-select: none;-khtml-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;
+}
+.box-content {
+	width: calc(100% - 40px);
+	padding: 30px 20px;
+	font-size: 11pt;
+	color: rgba(0,0,0,.54);
+	display: none;
+}
+.box-close {
+	position: absolute;
+	height: 64px;
+	width: 100%;
+	top: 0;
+	left: 0;
+	cursor: pointer;
+	display: none;
+}
+input:checked + .box {
+	height: auto;
+	margin: 16px 0;
+    box-shadow: 0 0 6px rgba(0,0,0,.16),0 6px 12px rgba(0,0,0,.32);
+}
+input:checked + .box .box-title {
+	border-bottom: 1px solid rgba(0,0,0,.18);
+}
+input:checked + .box .box-content,
+input:checked + .box .box-close {
+	display: inline-block;
+}
+.arrows section .box-title {
+	padding-left: 44px;
+	width: calc(100% - 64px);
+}
+.arrows section .box-title:before {
+	position: absolute;
+	display: block;
+	content: '\203a';
+	font-size: 18pt;
+	left: 20px;
+	top: -2px;
+	transition: transform .15s ease-in-out;
+	color: rgba(0,0,0,.54);
+}
+input:checked + section.box .box-title:before {
+	transform: rotate(90deg);
+}
+
+body {
+    font: 20px Montserrat, sans-serif;
+    line-height: 1.8;
+    color: #f5f6f7;
+  }
+  p {font-size: 16px;}
+  .margin {margin-bottom: 45px;}
+  .bg-1 { 
+    background-color: #474e5d; ; /* Green */
+    color: #ffffff;
+    
+    
+  }
+  .bg-2 { 
+    Background-image: url("/Users/aarathisrinivasnadathur/Desktop/webui/bgr3.jpg");
+    /* Dark Blue */
+    color: #ffffff;
+    Background-repeat:no-repeat;
+    Background-size: cover;
+ 
+  }
+  .bg-3 { 
+    Background-image: url("/Users/aarathisrinivasnadathur/Desktop/webui/bgr8.jpg");
+Background-repeat:no-repeat;
+    Background-size: cover;
+   /* White */  
+   
+  }
+  .bg-4 { 
+    background-color: #2f2f2f; /* Black Gray */
+    color: #fff;
+  }
+  .container-fluid {
+    padding-top: 100px;
+    padding-bottom:100px;
+  }
+  .navbar {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border: 0;
+    border-radius: 0;
+    margin-bottom: 0;
+    font-size: 12px;
+    letter-spacing: 5px;
+  }
+  
+
+</style>
+
+</head>
+<body >
+
+<nav class="navbar navbar-default">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+     
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+       <li><a href="#"><b>ADMIN</b></a></li>
+        <li><a href="/Users/aarathisrinivasnadathur/Desktop/webui/pg1.html"><b>OVERVIEW</b></a></li>
+        <li><a href="/Users/aarathisrinivasnadathur/Desktop/webui/accordion.html"><b>DATASET</b></a></li>
+<li><a href="/Users/aarathisrinivasnadathur/Desktop/webui/form.html"><b>ANALYZE</b></a></li>
+<li><a href="/Users/aarathisrinivasnadathur/Desktop/webui/dashboard.html"><b>VISUALIZATIONS</b></a></li>
+
+      </ul>
+    </div>
+  </div>
+</nav>
+<!-- First Container -->
+<div class="container-fluid bg-2 text-center">
+
+<div style="background:black;opacity:0.75;">
+  <h1 class="margin">ASSESSING BUILDING DAMAGE</h1>
+   
+
+  <h3 class="margin">IMPACT OF NATURAL DISASTERS BASED ON SATELLITE IMAGES</h3>
+
+
+</div>
+</div>
+<div class="container-fluid bg-3 text-center" >
+<div style="background:black;opacity:1;color:white;">  
+<div>
+<p >
+We obtained the data from xview2 website for six different types of natural disasters around the world, covering a total area of over 45,361 square kilometers. Our dataset of 850,736 buildings has building polygons, classification labels for damage types, ordinal labels of damage level, and corresponding satellite metadata. The xBD dataset has 15 countries and 6 types of disasters. 
+<img src="/Users/aarathisrinivasnadathur/Desktop/webui/mapimg.png" alt="different disasters in data" style="  display: block;margin-left: auto;margin-right: auto;width: 50%; opacity:1;">
+
+ </p>
+</div>
+<div style="Background-image: url("/Users/aarathisrinivasnadathur/Desktop/webui/bgr3.jpg");">
+	<nav class="accordion arrows">
+		
+		<input type="radio" name="accordion" id="cb1" />
+		<section class="box">
+			<label class="box-title" for="cb1" style="color:black;">Earthquake</label>
+			<label class="box-close" for="acc-close"></label>
+			<div class="box-content">One of the most devastating natural disaster that is a threat to human life and destroy millions of properties. In our project we analyze the earthquake data of Mexico	</div>
+		</section>
+		<input type="radio" name="accordion" id="cb2" />
+		<section class="box">
+			<label class="box-title" for="cb2" style="color:black;">Fires</label>
+			<label class="box-close" for="acc-close"></label>
+			<div class="box-content">Earthquakes can easily rupture natural gas mains and water mains, both contributing to the ignition of fires and hindering the efforts to control them. In our project we analyze the wildfire data of Portugal, socal-fire, pinery-bushfire, woolsey and Santa Rosa.</div>
+		</section>
+		<input type="radio" name="accordion" id="cb3" />
+		<section class="box">
+			<label class="box-title" for="cb3" style="color:black;">Floods</label>
+			<label class="box-close" for="acc-close"></label>
+			<div class="box-content">Flood is one of the deadliest types of natural disaster which results from extreme rain, snow, storm surges and coastal storms. In our project we analyze the flood data of  midwest and nepal. </p>
+      </div>
+		</section>
+<input type="radio" name="accordion" id="cb4" />
+		<section class="box">
+			<label class="box-title" for="cb4" style="color:black;">Volcanoes</label>
+			<label class="box-close" for="acc-close"></label>
+			<div class="box-content">Volcanoes are the vents or fissure in the earth crusts where lava, ash, rock and steam erupt on the earth’s surface. The fast-moving lava can destroy houses, buildings, roads and fields. In our project we analyze the volcano data of lower-puna and Guatemala.
+      </div>
+		</section><input type="radio" name="accordion" id="cb5" />
+		<section class="box">
+			<label class="box-title" for="cb5" style="color:black;">Hurricane</label>
+			<label class="box-close" for="acc-close"></label>
+			<div class="box-content">A Hurricane is a large rotating storm with high velocity winds that forms over warm waters in tropical areas. The shear strength of hurricanes winds can destroy buildings, topple trees and damage infrastructure. In our project we analyze the hurricane data of Matthew, Michael, Harvey and Florence.
+      </div>
+		</section><input type="radio" name="accordion" id="cb6" />
+		<section class="box">
+			<label class="box-title" for="cb6" style="color:black;">Tsunami</label>
+			<label class="box-close" for="acc-close"></label>
+			<div class="box-content">Series of water waves caused by vertical movement of seafloor are tsunamis. . In our project we analyze the tsunami data of palu and sunda.
+      </div>
+		</section>
+		<input type="radio" name="accordion" id="acc-close" />
+	</nav>
+
+
+
+ <footer class="container-fluid bg-4 text-center">
+<p>Team 5 project</p> 
+</footer>
+ 
+</body>
+</html>

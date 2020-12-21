@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+  body {
+    font: 20px Montserrat, sans-serif;
+    line-height: 1.8;
+    color: #f5f6f7;
+  }
+  p {font-size: 16px;}
+  .margin {margin-bottom: 45px;}
+  .bg-1 { 
+    background-color: #474e5d; ; /* Green */
+    color: #ffffff;
+    
+    
+  }
+  .bg-2 { 
+    Background-image: url("/Users/aarathisrinivasnadathur/Desktop/webui/bgr3.jpg");
+    /* Dark Blue */
+    color: #ffffff;
+    Background-repeat:no-repeat;
+    Background-size: cover;
+ 
+  }
+  .bg-3 { 
+    Background-image: url("/Users/aarathisrinivasnadathur/Desktop/webui/bgr8.jpg");
+Background-repeat:no-repeat;
+    Background-size: cover;
+   /* White */  
+   
+  }
+  .bg-4 { 
+    background-color: #2f2f2f; /* Black Gray */
+    color: #fff;
+  }
+  .container-fluid {
+    padding-top: 100px;
+    padding-bottom:100px;
+  }
+  .navbar {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border: 0;
+    border-radius: 0;
+    margin-bottom: 0;
+    font-size: 12px;
+    letter-spacing: 5px;
+  }
+  .navbar-nav  li a:hover {
+    color: #1abc9c !important;
+  }
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-default">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+     
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#"><b>ADMIN</b></a></li>
+        <li><a href="/Users/aarathisrinivasnadathur/Desktop/webui/pg1.html"><b>OVERVIEW</b></a></li>
+        <li><a href="/Users/aarathisrinivasnadathur/Desktop/webui/accordion.html"><b>DATASET</b></a></li>
+<li><a href="/Users/aarathisrinivasnadathur/Desktop/webui/form.html"><b>ANALYZE</b></a></li>
+<li><a href="/Users/aarathisrinivasnadathur/Desktop/webui/dashboard.html"><b>VISUALIZATIONS</b></a></li>
+
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- First Container -->
+<div class="container-fluid bg-2 text-center">
+
+<div style="background:black;opacity:0.75;">
+  <h1 class="margin">ASSESSING BUILDING DAMAGE</h1>
+   
+
+  <h3 class="margin">IMPACT OF NATURAL DISASTERS BASED ON SATELLITE IMAGES</h3>
+ 
+  <h4>OUR GOAL </h4>
+  <p style="text-align:center;"> The goal of this project is to develop an integrated framework for natural disaster management with the use of pre and post-disaster satellite images. We will locate areas of maximal disaster damage by using buildings as a reference and detect the change in the features of buildings using image annotation, before and after the disaster which will enable us to determine areas where to focus the relief efforts. After occurring a disaster, knowing the extent of damaged buildings over a large affected area will help in emergency actions and rescue works. Quantifying the impact of a disaster by defining an index will help in fulfillment of the gap between the disaster and development. This will result in speedy recovery of monetary or financial loss occurred due to damage. It will be easy to connect with local partners and relief organizations to request adequate resources like medical services, shelter, food, clothing and communication by knowing the disaster impact and damage intensity.
+</p>
+</div>
+
+
+
+
+<div style="background:white;opacity:0.75;color:black;">
+Our Team: Amar Ippili, Shubh Johri, Aarathi Nadathur, Divya Puraswani, Sameer Rajput
+</div>
+</div>
+
+
+
+<!-- Third Container (Grid) -->
+<div class="container-fluid bg-3 text-center" >
+<div style="background:white;opacity:0.75;color:black;">    
+  <b><h2 class="margin">DATASET SOURCE</h2><br></b>
+  <h2> <a href="https://xview2.org/dataset">www.xview2.org</a> </h2>
+      <p>We obtained the data from xview2 website for six different types of natural disasters around the world, covering a total area of over 45,361 square kilometers. Our dataset of 850,736 buildings has building polygons, classification labels for damage types, ordinal labels of damage level, and corresponding satellite metadata.</p>
+      <img src="/Users/aarathisrinivasnadathur/Desktop/webui/data1.png" class="img-responsive margin" style="width:75%; ;display: block;margin-left: auto;margin-right: auto;width: 50%;" alt="Image">
+    </div>
+</div>
+
+
+<!-- Footer -->
+<footer class="container-fluid bg-4 text-center">
+<p>Team 5 project</p> 
+</footer>
+
+</body>
+</html>
